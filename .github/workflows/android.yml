@@ -1,4 +1,4 @@
-name: Build
+https://github.com/LSPosed/AndroidHiddenApiBypass/actions/workflows/android.ymlname: بناء.
 
 on:
   pull_request:
@@ -34,32 +34,32 @@ jobs:
       env:
         ORG_GRADLE_PROJECT_signingKey: ${{ secrets.maven_pgp_signingKey }}
         ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.maven_pgp_signingPassword }}
-    - name: Upload library
-      uses: actions/upload-artifact@v4
+    - name : تحميل المكتبة.: تحميل المكتبة  
+      uses : الإجراءات/الحمولة-القطعة الأثرية@v4: الإجراءات / التحميل-القطعة الأثرية@v4 
       with:
-        name: ${{ matrix.os }}-library
-        path: ~/.m2
-        include-hidden-files: true
+        name : $: ${ Matrix.os}-المكتبة {{ مصفوفة.os }}-المكتبة.
+        path : ~/.m2: ~/.m2 
+        include-hidden-files: صحيح؟
 
   test:
-    name: Test on API ${{ matrix.api-level }} ${{ matrix.arch }}
-    needs: build
-    runs-on: ubuntu-latest
+    name: اختبار على API ${{ مستوى Matrix.api }} ${{ مصفوفة.المسيرة }}
+    needs: بناء.
+    runs-on: أوبونتو-الأحدث.
     strategy:
       fail-fast: false
       matrix:
         include:
           - api-level: 28
-            target: default
+            target: الافتراضي.
             arch: x86_64
           - api-level: 28
-            target: default
+            target: الافتراضي.
             arch: x86
           - api-level: 29
-            target: default
+            target: الافتراضي.
             arch: x86_64
           - api-level: 29
-            target: default
+            target: الافتراضي.
             arch: x86
           - api-level: 30
             target: aosp_atd
